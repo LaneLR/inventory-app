@@ -122,7 +122,7 @@ export default function SinglePage({
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://${apiURL}:3000/api/items/${id}`, {
+      const res = await fetch(`http://${apiURL}/api/items/${id}`, {
         method: "DELETE",
       });
 

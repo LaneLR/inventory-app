@@ -98,7 +98,7 @@ function UpdateByIdForm() {
   useEffect(() => {
     async function fetchItem() {
       try {
-        const res = await fetch(`http://${apiURL}:3000/api/items/${id}`)
+        const res = await fetch(`http://${apiURL}/api/items/${id}`)
         const data = await res.json();
         setFormData({
           name: data?.name,
