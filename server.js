@@ -1,3 +1,4 @@
+const { default: apiURL } = require("./public/react/api");
 const app = require("./server/app");
 const sequelize = require("./server/db");
 
@@ -8,7 +9,7 @@ async function init() {
     await sequelize.sync();
 
     app.listen(PORT, () => {
-      console.log(`Server listening at http://localhost:${PORT}`);
+      console.log(`Server listening at http://${apiURL}:${PORT}`);
     });
   } catch (error) {
     console.error("Error starting server:", error);
