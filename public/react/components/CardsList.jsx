@@ -26,18 +26,19 @@ const Wrapper = styled.div`
 `;
 
 export default function CardsList() {
-  const { items, handleAddToCart } = useContext(AllStatesContext)
+  const { filteredItems, handleAddToCart } = useContext(AllStatesContext);
   return (
     <GridWrapper>
       <CardWrapperGrid>
-        {items.map((item, i) => {
+        {filteredItems.map((item, i) => {
           return (
             <div key={item.id}>
               <Wrapper>
-                <Card
+                <Card item={item} />
+                <AddToCartButton
+                  handleAddToCart={handleAddToCart}
                   item={item}
                 />
-                <AddToCartButton handleAddToCart={handleAddToCart} item={item} />
               </Wrapper>
             </div>
           );
