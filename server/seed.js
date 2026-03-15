@@ -4,8 +4,7 @@ const items = require("./items.json");
 
 async function seed() {
   //Force sync database to drop everything and start fresh
-  // await sequelize.sync({ force: true });
-  await Item.sync();
+  await sequelize.sync({ force: true });
   await Item.bulkCreate(items);
   console.log("Database populated");
 }
