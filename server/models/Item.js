@@ -17,7 +17,11 @@ Item.init(
       allowNull: false,
       validate: {
         isFloat: { msg: "Price must be a valid number" },
-        min: { args: [0], msg: "Price must be at least 0" },
+        customValidator(value) {
+          if (value <= 0) {
+            throw new Error("Price must be greater than 0");
+          }
+        },
       },
     },
     quantity: {
@@ -25,7 +29,11 @@ Item.init(
       allowNull: false,
       validate: {
         isInt: { msg: "Quantity must be an integer" },
-        min: { args: [0], msg: "Quantity cannot be negative" },
+        customValidator(value) {
+          if (value < 0) {
+            throw new Error("Quantity cannot be negative");
+          }
+        },
       },
     },
     description: {
