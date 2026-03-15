@@ -78,30 +78,35 @@ export default function SideBar() {
 
   const maxPriceNum = Number(maxPrice);
 
-  async function handleFilter() {
+  function handleFilter() {
     let newItems = items;
+
+    // Filter by max price
     if (maxPriceNum > 0) {
       newItems = newItems.filter((item) => item.price < maxPriceNum);
     }
-    if (mens) {
-      newItems = newItems.filter((item) => item.category === "men's clothing");
-    } else if (womens) {
-      newItems = newItems.filter(
-        (item) => item.category === "women's clothing",
+
+    // Filter by categories (allow multiple selections)
+    const selectedCategories = [];
+    if (mens) selectedCategories.push("men's clothing");
+    if (womens) selectedCategories.push("women's clothing");
+    if (electronics) selectedCategories.push("electronics");
+    if (jewelery) selectedCategories.push("jewelery");
+
+    if (selectedCategories.length > 0) {
+      newItems = newItems.filter((item) =>
+        selectedCategories.includes(item.category),
       );
-    } else if (electronics) {
-      newItems = newItems.filter((item) => item.category === "electronics");
-    } else if (jewelery) {
-      newItems = newItems.filter((item) => item.category === "jewelery");
     }
 
+    // Sort by price
     if (ascending) {
-      //sorting if ascending or descending is selected
       newItems = [...newItems].sort((a, b) => a.price - b.price);
     } else if (descending) {
       newItems = [...newItems].sort((a, b) => b.price - a.price);
     }
 
+    console.log("Filtered items:", newItems);
     setFilteredItems(newItems);
   }
 
@@ -117,12 +122,20 @@ export default function SideBar() {
     setDescending(false);
   }
 
-return (
+  return (
     <>
       <Wrapper>
         <h2>Multistore</h2>
         <br />
-        <span style={{ gap: "5px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <span
+          style={{
+            gap: "5px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           {" "}
           Max Price:
           <StyledInput
@@ -134,108 +147,121 @@ return (
           ></StyledInput>
         </span>
         <TitleFont>Categories</TitleFont>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "80%" }}>
-        <label
+        <div
           style={{
-            gap: "5px",
             display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            width: "80%",
           }}
         >
-          <input
-            type="checkbox"
-            checked={mens}
-            onChange={() => setMens(!mens)}
-          />
-          Mens
-        </label>
-        <label
-          style={{
-            gap: "5px",
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-        >
-          <input
-            type="checkbox"
-            checked={womens}
-            onChange={() => setWomens(!womens)}
-          />
-          Womens
-        </label>
-        <label
-          style={{
-            gap: "5px",
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-        >
-          <input
-            type="checkbox"
-            checked={electronics}
-            onChange={() => setElectronics(!electronics)}
-          />
-          Electronics
-        </label>
-        <label
-          style={{
-            gap: "5px",
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-        >
-          <input
-            type="checkbox"
-            checked={jewelery}
-            onChange={() => setJewelery(!jewelery)}
-          />
-          Jewelery
-        </label>
+          <label
+            style={{
+              gap: "5px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={mens}
+              onChange={() => setMens(!mens)}
+            />
+            Mens
+          </label>
+          <label
+            style={{
+              gap: "5px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={womens}
+              onChange={() => setWomens(!womens)}
+            />
+            Womens
+          </label>
+          <label
+            style={{
+              gap: "5px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={electronics}
+              onChange={() => setElectronics(!electronics)}
+            />
+            Electronics
+          </label>
+          <label
+            style={{
+              gap: "5px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={jewelery}
+              onChange={() => setJewelery(!jewelery)}
+            />
+            Jewelery
+          </label>
         </div>
         <br />
         <TitleFont>Sort</TitleFont>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "80%" }}>
-
-        <label
+        <div
           style={{
-            gap: "5px",
             display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            width: "80%",
           }}
         >
-          <input
-            type="radio"
-            checked={ascending}
-            onChange={() => {
-              setAscending(true);
-              setDescending(false);
+          <label
+            style={{
+              gap: "5px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
             }}
-          />
-          Ascending Price
-        </label>
-        <label
-          style={{
-            gap: "5px",
-            display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-          }}
-        >
-          <input
-            type="radio"
-            checked={descending}
-            onChange={() => {
-              setAscending(false);
-              setDescending(true);
+          >
+            <input
+              type="radio"
+              checked={ascending}
+              onChange={() => {
+                setAscending(true);
+                setDescending(false);
+              }}
+            />
+            Ascending Price
+          </label>
+          <label
+            style={{
+              gap: "5px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
             }}
-          />
-          Descending Price
-        </label>
+          >
+            <input
+              type="radio"
+              checked={descending}
+              onChange={() => {
+                setAscending(false);
+                setDescending(true);
+              }}
+            />
+            Descending Price
+          </label>
         </div>
         <br />
         <Button
