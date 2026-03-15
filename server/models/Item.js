@@ -43,14 +43,18 @@ Item.init(
       allowNull: false,
       validate: {
         notEmpty: { msg: "Image URL is required" },
-        isUrl: { msg: "Image must be a valid URL" },
+        isValidImageURL(value) {
+          if (!value.startsWith("http://") && !value.startsWith("https://")) {
+            throw new Error("Image URL must start with http:// or https://");
+          }
+        },
       },
     },
   },
   {
     sequelize,
     modelName: "Item",
-  }
+  },
 );
 
 module.exports = Item;
