@@ -1,10 +1,16 @@
-const path = require("path");
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
+const pg = require('pg');
 
-const sequelize = new Sequelize({
-  dialect: "sqlite",
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  dialectModule: pg,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
   logging: false,
-  storage: path.join(__dirname, "db.sqlite"),
 });
 
 module.exports = sequelize;
