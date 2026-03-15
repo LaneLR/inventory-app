@@ -92,10 +92,13 @@ function AddForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const parsedPrice = parseFloat(formData.price);
+    const parsedQuantity = parseInt(formData.quantity);
+
     const payload = {
       ...formData,
-      price: parseFloat(formData.price),
-      quantity: parseInt(formData.quantity),
+      price: isNaN(parsedPrice) ? 0 : parsedPrice,
+      quantity: isNaN(parsedQuantity) ? 0 : parsedQuantity,
     };
 
     try {
