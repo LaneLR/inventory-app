@@ -6,7 +6,8 @@
     "client-dev": "parcel public/index.html --open",
     "server-dev": "nodemon server.js",
     "seed": "node server/seed.js",
-    "start": "parcel build public/index.html && node server.js"
+    "build": "parcel build public/index.html --dist-dir dist", 
+    "start": "node server.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
