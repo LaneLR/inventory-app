@@ -30,7 +30,7 @@ The Inventory App is a full-stack web application designed to streamline product
 
 
 ## Deployed Link
-https://inventory-app-ts3j.onrender.com/
+https://planz-calendar-app.vercel.app/
 
 ## Collaborators
 
