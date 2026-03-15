@@ -79,14 +79,12 @@ export default function SideBar() {
   const maxPriceNum = Number(maxPrice);
 
   function handleFilter() {
-    let newItems = items;
+    let newItems = [...items]; 
 
-    // Filter by max price
     if (maxPriceNum > 0) {
-      newItems = newItems.filter((item) => item.price < maxPriceNum);
+      newItems = newItems.filter((item) => Number(item.price) <= maxPriceNum);
     }
 
-    // Filter by categories (allow multiple selections)
     const selectedCategories = [];
     if (mens) selectedCategories.push("men's clothing");
     if (womens) selectedCategories.push("women's clothing");
@@ -95,19 +93,17 @@ export default function SideBar() {
 
     if (selectedCategories.length > 0) {
       newItems = newItems.filter((item) =>
-        selectedCategories.includes(item.category),
+        selectedCategories.includes(item.category)
       );
     }
 
-    // Sort by price
     if (ascending) {
-      newItems = [...newItems].sort((a, b) => a.price - b.price);
+      newItems.sort((a, b) => Number(a.price) - Number(b.price));
     } else if (descending) {
-      newItems = [...newItems].sort((a, b) => b.price - a.price);
+      newItems.sort((a, b) => Number(b.price) - Number(a.price));
     }
 
-    console.log("Filtered items:", newItems);
-    setFilteredItems(newItems);
+    setFilteredItems([...newItems]); 
   }
 
   async function removeFilters() {
