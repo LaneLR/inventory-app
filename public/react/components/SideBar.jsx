@@ -9,9 +9,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin-top: 20px;
-  width: 220px;         
-  height: 85vh;      
-  background: #dd2a3b;    
+  width: 220px;
+  height: 85vh;
+  background: #dd2a3b;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
   padding: 16px;
@@ -51,7 +51,7 @@ const BtnWrapper = styled.div`
 `;
 
 const StyledInput = styled.input`
-  width: 40%; 
+  width: 40%;
   padding: 10px;
   margin-bottom: 8px;
   border: 1px solid #ccc;
@@ -65,10 +65,8 @@ const StyledInput = styled.input`
   }
 `;
 
-
-
 export default function SideBar() {
-  const {items, setFilteredItems} = useContext(AllStatesContext)
+  const { items, setFilteredItems } = useContext(AllStatesContext);
 
   const [maxPrice, setMaxPrice] = useState(0); //These are the filters that will be applied to the items
   const [mens, setMens] = useState(false);
@@ -78,29 +76,33 @@ export default function SideBar() {
   const [ascending, setAscending] = useState(false);
   const [descending, setDescending] = useState(false);
 
+  const maxPriceNum = Number(maxPrice);
+
   async function handleFilter() {
     let newItems = items;
-    if (maxPrice> 0){
-      newItems = items.filter(item => item.price < maxPrice); 
+    if (maxPriceNum > 0) {
+      newItems = newItems.filter((item) => item.price < maxPriceNum);
     }
     if (mens) {
-      newItems = newItems.filter(item => item.category === "men's clothing");
+      newItems = newItems.filter((item) => item.category === "men's clothing");
     } else if (womens) {
-      newItems = newItems.filter(item => item.category === "women's clothing");
+      newItems = newItems.filter(
+        (item) => item.category === "women's clothing",
+      );
     } else if (electronics) {
-      newItems = newItems.filter(item => item.category === "electronics");
+      newItems = newItems.filter((item) => item.category === "electronics");
     } else if (jewelery) {
-      newItems = newItems.filter(item => item.category === "jewelery");
+      newItems = newItems.filter((item) => item.category === "jewelery");
     }
 
-    if (ascending) { //sorting if ascending or descending is selected
-    newItems = [...newItems].sort((a, b) => a.price - b.price);
+    if (ascending) {
+      //sorting if ascending or descending is selected
+      newItems = [...newItems].sort((a, b) => a.price - b.price);
     } else if (descending) {
       newItems = [...newItems].sort((a, b) => b.price - a.price);
     }
 
     setFilteredItems(newItems);
-    
   }
 
   async function removeFilters() {
@@ -115,43 +117,150 @@ export default function SideBar() {
     setDescending(false);
   }
 
-  return ( <>
-    <Wrapper>
-      <h2>Multistore</h2><br/>
-      <span style={{gap: "5px"}} > Max Price:
-      <StyledInput type="number" step="10" min="0" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)}></StyledInput>
-      </span>
-      <TitleFont>Categories</TitleFont>
-      <label style={{gap: "5px", display: "flex", alignItems: "center", cursor: "pointer"}}> 
-        <input type="checkbox" checked={mens} onChange={() => setMens(!mens)} />
-        Mens
-      </label>
-      <label style={{gap: "5px", display: "flex", alignItems: "center", cursor: "pointer"}}> 
-        <input type="checkbox" checked={womens} onChange={() => setWomens(!womens)} />
-        Womens
-      </label>
-      <label style={{gap: "5px", display: "flex", alignItems: "center", cursor: "pointer"}}> 
-        <input type="checkbox" checked={electronics} onChange={() => setElectronics(!electronics)} />
-        Electronics
-      </label>
-      <label style={{gap: "5px", display: "flex", alignItems: "center", cursor: "pointer"}}> 
-        <input type="checkbox" checked={jewelery} onChange={() => setJewelery(!jewelery)} />
-        Jewelery
-      </label>
-      <br/>
-      <TitleFont>Sort</TitleFont>
-      <label style={{gap: "5px", display: "flex", alignItems: "center", cursor: "pointer"}}> 
-        <input type="radio" checked={ascending} onChange={() => {setAscending(true); setDescending(false);}} />
-        Ascending Price
-      </label>
-      <label style={{gap: "5px", display: "flex", alignItems: "center", cursor: "pointer"}}> 
-        <input type="radio" checked={descending} onChange={() => {setAscending(false); setDescending(true);}} />
-        Descending Price
-      </label>
-      <br/>
-      <Button style={{width: "180px", boxShadow: "none", border: "solid", borderColor: "white" }} onClick={handleFilter} >Apply Filters</Button>
-      <Button style={{width: "180px", boxShadow: "none", border: "solid", borderColor: "white" }} onClick={removeFilters} >Reset Filters</Button>
-    </Wrapper>
+return (
+    <>
+      <Wrapper>
+        <h2>Multistore</h2>
+        <br />
+        <span style={{ gap: "5px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          {" "}
+          Max Price:
+          <StyledInput
+            type="number"
+            step="10"
+            min="0"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+          ></StyledInput>
+        </span>
+        <TitleFont>Categories</TitleFont>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "80%" }}>
+        <label
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={mens}
+            onChange={() => setMens(!mens)}
+          />
+          Mens
+        </label>
+        <label
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={womens}
+            onChange={() => setWomens(!womens)}
+          />
+          Womens
+        </label>
+        <label
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={electronics}
+            onChange={() => setElectronics(!electronics)}
+          />
+          Electronics
+        </label>
+        <label
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={jewelery}
+            onChange={() => setJewelery(!jewelery)}
+          />
+          Jewelery
+        </label>
+        </div>
+        <br />
+        <TitleFont>Sort</TitleFont>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", width: "80%" }}>
+
+        <label
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="radio"
+            checked={ascending}
+            onChange={() => {
+              setAscending(true);
+              setDescending(false);
+            }}
+          />
+          Ascending Price
+        </label>
+        <label
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="radio"
+            checked={descending}
+            onChange={() => {
+              setAscending(false);
+              setDescending(true);
+            }}
+          />
+          Descending Price
+        </label>
+        </div>
+        <br />
+        <Button
+          style={{
+            width: "180px",
+            boxShadow: "none",
+            border: "solid",
+            borderColor: "white",
+          }}
+          onClick={handleFilter}
+        >
+          Apply Filters
+        </Button>
+        <Button
+          style={{
+            width: "180px",
+            boxShadow: "none",
+            border: "solid",
+            borderColor: "white",
+          }}
+          onClick={removeFilters}
+        >
+          Reset Filters
+        </Button>
+      </Wrapper>
     </>
   );
 }
