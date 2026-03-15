@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "price": 109.95,
     "quantity": 5,
@@ -9,7 +8,6 @@
     "image": "https://www.fjallraven.com/4959f6/globalassets/catalogs/fjallraven/f2/f242/f24210/f560/7392158958184_ss18_a_foldsack_no1_21.jpg?width=624&height=624&rmode=BoxPad&bgcolor=fff&quality=100"
   },
   {
-    "id": 2,
     "name": "Mens Casual Premium Slim Fit T-Shirts",
     "price": 22.3,
     "quantity": 13,
@@ -18,7 +16,6 @@
     "image": "https://m.media-amazon.com/images/I/71bVVKxjgeL._AC_UY1000_.jpg"
   },
   {
-    "id": 3,
     "name": "Mens Cotton Jacket",
     "price": 55.99,
     "quantity": 22,
@@ -27,7 +24,6 @@
     "image": "https://m.media-amazon.com/images/I/81A2cCZlxSS._AC_UY1000_.jpg"
   },
   {
-    "id": 4,
     "name": "Mens Casual Slim Fit",
     "price": 15.99,
     "quantity": 43,
@@ -36,7 +32,6 @@
     "image": "https://www.mountainkhakis.com/cdn/shop/products/Men_Teton_20Twill_20Pant_Slim_20Fit_Sand_E15_2e3b7dde-9847-4486-a582-680750112b2c.jpg?crop=center&height=1600&v=1770159320&width=1600"
   },
   {
-    "id": 5,
     "name": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     "price": 695,
     "quantity": 25,
@@ -45,7 +40,6 @@
     "image": "https://www.reneetaylorgallery.com/cdn/shop/products/naga-gold-silver-dragon-station-bracelet-bz65032-john-hardy_800x.jpg?v=1599928721"
   },
   {
-    "id": 6,
     "name": "Solid Gold Petite Micropave ",
     "price": 168,
     "quantity": 3,
@@ -54,7 +48,6 @@
     "image": "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/Orbitvu/FineJewelry/601080/601080_Y_1_1600X1600.jpg"
   },
   {
-    "id": 7,
     "name": "White Gold Plated Princess",
     "price": 9.99,
     "quantity": 7,
@@ -63,7 +56,6 @@
     "image": "https://www.mayamila.com/cdn/shop/products/85_aaDSC_2773_2.jpg?v=1525922089"
   },
   {
-    "id": 8,
     "name": "Pierced Owl Rose Gold Plated Stainless Steel Double",
     "price": 10.99,
     "quantity": 9,
@@ -72,7 +64,6 @@
     "image": "https://m.media-amazon.com/images/I/51UDEzMJVpL._AC_UY1000_.jpg"
   },
   {
-    "id": 9,
     "name": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
     "price": 64,
     "quantity": 6,
@@ -81,7 +72,6 @@
     "image": "https://www.adorama.com/images/Large/WDBU6Y2BBK_5.jpg"
   },
   {
-    "id": 10,
     "name": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     "price": 109,
     "quantity": 11,
@@ -90,7 +80,6 @@
     "image": "https://m.media-amazon.com/images/I/5169n4UNj5L._AC_UF894,1000_QL80_.jpg"
   },
   {
-    "id": 11,
     "name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
     "price": 109,
     "quantity": 10,
@@ -99,7 +88,6 @@
     "image": "https://cdn.shoplightspeed.com/shops/623240/files/35332309/silicon-power-sp-256gb-ssd-3d-nand-a55-slc-cache-p.jpg"
   },
   {
-    "id": 12,
     "name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     "price": 114,
     "quantity": 12,
@@ -108,7 +96,6 @@
     "image": "https://i5.walmartimages.com/seo/WD-4TB-Gaming-Drive-works-with-Playstation-4-Portable-External-Hard-Drive-WDBM1M0040BBK-WESN_09651410-97c3-4663-b940-ba97faa076f0.58853b3927231cc2be1f4ac57084c0bf.jpeg"
   },
   {
-    "id": 13,
     "name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     "price": 599,
     "quantity": 16,
@@ -117,7 +104,6 @@
     "image": "https://m.media-amazon.com/images/I/41h+i4XcFyL._SS520_.jpg"
   },
   {
-    "id": 14,
     "name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) - Super Ultrawide Screen QLED",
     "price": 999.99,
     "quantity": 15,
@@ -126,7 +112,6 @@
     "image": "https://i.pcmag.com/imagery/reviews/03Qnlt9aC4lMcPMuRP7HiCO-8..v1569472965.jpg"
   },
   {
-    "id": 15,
     "name": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     "price": 56.99,
     "quantity": 22,
@@ -135,7 +120,6 @@
     "image": "https://m.media-amazon.com/images/I/612US44RxFL._AC_UY1000_.jpg"
   },
   {
-    "id": 16,
     "name": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     "price": 29.95,
     "quantity": 8,
@@ -144,7 +128,6 @@
     "image": "https://dailysale.com/cdn/shop/products/lock-and-love-womens-removable-hooded-faux-leather-jacket-womens-outerwear-dailysale-323013.jpg?v=1757705125&width=550"
   },
   {
-    "id": 17,
     "name": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     "price": 39.99,
     "quantity": 5,
@@ -153,7 +136,6 @@
     "image": "https://m.media-amazon.com/images/I/61fdoQ+pZCL._AC_UY1000_.jpg"
   },
   {
-    "id": 18,
     "name": "MBJ Women's Solid Short Sleeve Boat Neck V",
     "price": 9.85,
     "quantity": 31,
@@ -162,7 +144,6 @@
     "image": "https://m.media-amazon.com/images/I/41j2+T0r25L._AC_SY1000_.jpg"
   },
   {
-    "id": 19,
     "name": "Opna Women's Short Sleeve Moisture",
     "price": 7.95,
     "quantity": 27,
@@ -171,7 +152,6 @@
     "image": "https://m.media-amazon.com/images/I/41HE8hNEw4L.jpg"
   },
   {
-    "id": 20,
     "name": "DANVOUY Womens T Shirt Casual Cotton Short",
     "price": 12.99,
     "quantity": 13,
