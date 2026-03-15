@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import Button from "./Button";
-import { useContext } from "react";
-import { AllStatesContext } from "./App";
 
 const ModalWrapper = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-flow: column nowrap;
@@ -39,15 +37,12 @@ const BtnContainer = styled.div`
   gap: 20px;
 `;
 
-
-
-export default function DeleteModal() {
-  const { handleCancelClick, handleDelete } = useContext(AllStatesContext)
+export default function DeleteModal({ handleCancelClick, handleDelete }) {
   return (
     <>
       <ModalOverlay>
         <ModalWrapper>
-            <p>Are you sure you want to delete this item?</p>
+          <p>Are you sure you want to delete this item?</p>
           <BtnContainer>
             <Button onClick={handleDelete}>Confirm Delete</Button>
             <Button onClick={handleCancelClick}>Cancel</Button>
