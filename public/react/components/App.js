@@ -47,7 +47,7 @@ export default function App() {
 
   useEffect(() => {
     fetchItems();
-  }, [filteredItems]);
+  }, []);
 
   const handleItemAdded = (newItem) => {
     setItems((prevItems) => [...prevItems, newItem]);
@@ -65,7 +65,6 @@ export default function App() {
     setItems((prevItems) =>
       prevItems.map((item) => (item.id === updatedItem.id ? updatedItem : item))
     );
-    await fetchItems();
   };
 
   const handleUserAdded = (newUser) => {
