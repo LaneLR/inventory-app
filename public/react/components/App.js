@@ -135,7 +135,6 @@ export default function App() {
             <Route path="/delete-items" element={<DeleteForm />} />
             <Route path="/edit-item/:id" element={<UpdateForm />} />
             <Route path="/login-form" element={<CreateUserMenu />} />
-
             <Route path="/checkout-cart" element={<CheckoutCart />} />
           </Routes>
         </BodyStyle>
