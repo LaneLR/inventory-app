@@ -94,12 +94,15 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default function SinglePage({ 
-  // handleItemDeleted, 
-  // currentUser, 
-  // handleAddToCart 
-}) {
-  const {handleAddToCart, currentUser, handleItemDeleted} = useContext(AllStatesContext)
+export default function SinglePage(
+  {
+    // handleItemDeleted,
+    // currentUser,
+    // handleAddToCart
+  },
+) {
+  const { handleAddToCart, currentUser, handleItemDeleted } =
+    useContext(AllStatesContext);
 
   const { id } = useParams();
   const [item, setItem] = useState(null);
@@ -192,7 +195,8 @@ export default function SinglePage({
           {/* This is the card with description and categories*/}
           <p>{item.description}</p> <br />
           <p>
-            <strong>Item Updated at : </strong> {item.updatedAt.slice(0, 10)}{" "}
+            <strong>Item Updated at : </strong>{" "}
+            {item.updatedAt.slice(0, 10)}{" "}
           </p>{" "}
           <br />
           <p>
@@ -207,9 +211,9 @@ export default function SinglePage({
                 <Button>Edit Item</Button>
               </StyledLink>
             </ButtonWrapper>
-              <StyledLink to={`/`}>
-                <Button>Back to List</Button>
-              </StyledLink>
+            <StyledLink to={`/`}>
+              <Button>Back to List</Button>
+            </StyledLink>
             <ButtonWrapper style={{ visibility: "hidden" }}>
               <Button onClick={handleDeleteClick}>Delete Item</Button>
             </ButtonWrapper>
